@@ -1,0 +1,31 @@
+<div class="container" *ngIf="isLoggedIn">
+    <table class="table table-bordered table-hover mt-4">
+        <thead>
+            <tr>
+                <th>EmployeeiD</th>
+                <th>first name</th>
+                <th>last name</th>
+                <th>user name</th>
+                <th>password</th>
+                <th>email</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employees | async">
+                <td>{{emp.emp_ID}}</td>
+                <td>{{emp.emp_First_Name}}</td>
+                <td>{{emp.emp_Last_Name}}</td>
+                <td>{{emp.emp_Username}}</td>
+                <td>{{emp.emp_Password}}</td>
+                <td>{{emp.emp_Email}}</td>
+                <td>
+                  <button (click)="deleteEmployee(emp.emp_ID)" class="btn btn-danger btn-sm m-2">Delete</button>
+                  <button (click)="updateEmployee(emp.emp_ID)" class="btn btn-warning btn-sm m-2">Update</button>
+                  <button (click)="employeeDetails(emp.emp_ID)" class="btn btn-info btn-sm m-2">Details</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

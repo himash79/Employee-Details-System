@@ -1,0 +1,25 @@
+<div class="container" *ngIf="isLoggedIn">
+    <div class="m-4">
+        <h2>Employee Details</h2> 
+    <hr/>
+    <div *ngIf="employee">
+    <div>
+        <label><b>Employee No : </b></label> {{employee.emp_ID}}
+    </div>
+    <div>
+        <label><b>Name : </b></label> {{employee.emp_First_Name}} {{employee.emp_Last_Name}}
+    </div>
+    <div>
+        <label><b>Username : </b></label> {{employee.emp_Username}}
+    </div>  
+    <div>
+        <label><b>Password : </b></label> {{employee.emp_Password}}
+    </div>
+    <div>
+        <label><b>Email : </b></label> {{employee.emp_Email}}
+    </div>
+    </div>
+    <button (click)="list()" class="btn btn-primary btn-sm mt-3">Back to home</button>
+    <hr>
+    </div>
+</div>

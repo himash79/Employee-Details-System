@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row" *ngIf="!isLoggedIn">
+    <div class="col-3 offset-4 mt-5">
+      <form>
+        <h3>Sign in</h3>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="">User name</label>
+          <input name="userName" [(ngModel)]="userName" name="userName" id="userName" class="form-control" />
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="">Password</label>
+          <input type="password" [(ngModel)]="password" name="password" id="password" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mb-4" (click)="doLogin()">Sign in</button>
+      </form>
+      <div class="mt-4" *ngIf="isLoggedFail">
+        <div class="alert alert-danger" role="alert">
+          Username or Password invalid !
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
